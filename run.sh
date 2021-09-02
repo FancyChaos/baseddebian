@@ -14,8 +14,8 @@ fi
 SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 export SCRIPTPATH
 
-### Install coreutils if they are not yet installed
-sudo apt install -y coreutils
+### Install essentials if they are not yet installed
+sudo apt install -y coreutils build-essential rsync wget curl
 
 cd $SCRIPTPATH
 
