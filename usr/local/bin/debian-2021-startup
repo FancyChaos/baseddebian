@@ -1,0 +1,4 @@
+#!/bin/bash
+# Will be called on startup by the systemd service "debian-2021.service"
+
+echo "HI $USER"
