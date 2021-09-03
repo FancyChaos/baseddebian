@@ -16,7 +16,13 @@ echo "Installed: st"
 echo "Installing fish and omf..."
 chmod +x installations/install_fish.sh
 bash installations/install_fish.sh
-echo "Installed: fish and omf..."
+echo "Installed: fish and omf"
+
+### Install zsh
+echo "Installing zsh..."
+chmod +x installations/install_zsh.sh
+bash installations/install_zsh.sh
+echo "Installed: zsh"
 
 ### Install bat
 echo "Installing bat..."

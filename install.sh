@@ -56,6 +56,8 @@ sudo systemctl disable systemd-networkd.service
 sudo systemctl enable NetworkManager.service
 
 ### Cleanup
+sudo apt autoremove -y
+
 sudo systemctl disable unattended-upgrades.service
 
 ### Disable webcam by default
