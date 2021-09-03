@@ -13,7 +13,7 @@ My own scripts to setting up an dwm environment from a freshly installed Debian 
 
 	The **run.sh** script will create an **install.log** file inside the cloned repository which will include all actions done by the scripts.
 
-After the reboot you will end up in a default tty terminal. Just login and execute `startx` to startup the system.
+After the automatic reboot you will end up in a default tty terminal. Just login and execute `startx` to startup the system.
 
 ## Known bugs/quirks
 - Network problems

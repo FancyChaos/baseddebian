@@ -55,7 +55,7 @@ sudo apt install -f -y
 sudo systemctl disable systemd-networkd.service
 sudo systemctl enable NetworkManager.service
 
-# Cleanup
+### Cleanup
 sudo systemctl disable unattended-upgrades.service
 
 ### Disable webcam by default
@@ -65,5 +65,7 @@ sudo systemctl disable unattended-upgrades.service
 ### Boot into command line
 sudo systemctl set-default multi-user.target
 
+### Done
 echo "Installation done"
-echo "Please reboot your system"
+sudo reboot
+
