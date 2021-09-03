@@ -55,6 +55,9 @@ sudo apt install -f -y
 sudo systemctl disable systemd-networkd.service
 sudo systemctl enable NetworkManager.service
 
+# Cleanup
+sudo systemctl disable unattended-upgrades.service
+
 ### Disable webcam by default
 ### Toogle back on with 'sudo modprobe uvcvideo'
 # sudo modprobe -r uvcvideo
