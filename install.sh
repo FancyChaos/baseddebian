@@ -1,12 +1,6 @@
 #!/bin/bash
 
 echo "Building and installing a dwm system for user $USER into $HOME"
-printf "Continue? (y/n): "
-read con
-if [ "$con" != "y" ] && [ "$con" != "Y" ]; then
-	echo "Exiting..." && exit
-fi
-sleep 3
 
 echo "Copying configuration files (/etc/, /usr/, ~/.config, etc.)..."
 
