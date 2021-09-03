@@ -1,4 +1,5 @@
 #!/bin/bash
-# Will be called on startup by the systemd service "debian-2021.service"
+# Will be called on startup by the .xinitrc
 
-echo "HI $USER"
+# Set wallpeper
+feh --bg-scale ~/.config/wallpaper/plant-onion.png &
