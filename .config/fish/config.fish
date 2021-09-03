@@ -7,3 +7,5 @@ alias gc="git commit"
 alias gf="git fetch"
 alias gr="git remote"
 alias gd="git diff"
+
+set -gx PATH ~/bin/ $PATH

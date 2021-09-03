@@ -1,3 +1,3 @@
 function b
-	bat --theme="ansi-dark" $argv
+	bat --theme="ansi" $argv
 end
