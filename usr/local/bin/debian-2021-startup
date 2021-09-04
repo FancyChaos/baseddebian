@@ -1,5 +1,12 @@
 #!/bin/bash
 # Will be called on startup by the .xinitrc
 
+# Wait for dwm to startup
+while ! pgrep -x dwm > /dev/null
+do
+	sleep .5
+done
+
+
 # Set wallpeper
 feh --bg-scale ~/.config/wallpaper/plant-onion.png &

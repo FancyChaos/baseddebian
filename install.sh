@@ -11,13 +11,8 @@ mkdir $HOME/GitRepos/
 ### copying files
 sudo rsync -avr etc/ /etc/
 
-### copying wallpaper
-#sudo rsync -avr wallpapers/ /usr/share/wallpapers/
-#rsync -avr wallpapers $HOME/
-
 ### copying configs
-rsync -av home/.xinitrc $HOME/
-rsync -avr home/.config/ $HOME/.config/
+rsync -avr home/ $HOME/
 
 # Copying /usr/ for custom scripts
 sudo rsync -avr usr/local/bin/ /usr/local/bin/
