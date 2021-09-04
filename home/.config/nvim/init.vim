@@ -181,3 +181,9 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Setup tab key
+set tabstop=4
+set softtabstop=0 noexpandtab
+set shiftwidth=4
+
