@@ -16,8 +16,8 @@ sudo rsync -avr etc/ /etc/
 #rsync -avr wallpapers $HOME/
 
 ### copying configs
-rsync -av .xinitrc $HOME/
-rsync -avr .config/ $HOME/.config/
+rsync -av home/.xinitrc $HOME/
+rsync -avr home/.config/ $HOME/.config/
 
 # Copying /usr/ for custom scripts
 sudo rsync -avr usr/local/bin/ /usr/local/bin/
