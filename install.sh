@@ -29,7 +29,7 @@ echo "Installing packages..."
 sudo apt update && sudo apt upgrade -y
 
 ### installing packages and default applications
-sudo apt install -y libx11-dev libxft-dev libxinerama1 libxinerama-dev network-manager curl wget apt-transport-https dirmngr rsync dmenu python3 autoconf suckless-tools xorg software-properties-common cmake fonts-font-awesome fonts-roboto devscripts file-roller feh build-essential gtk2-engines-murrine gtk2-engines vim caca-utils highlight atool w3m poppler-utils mediainfo compton python3-pip libcanberra-gtk-module libgtk2.0-dev libgtk-3-dev gnome-devel imagemagick nnn tig arandr htop mesa-utils mesa-utils-extra emacs xsel bluez-cups blueman gpick tree ninja-build gettext libtool-bin g++ unzip jq nmap thunderbird ack neofetch crda net-tools rofi
+sudo apt install -y libx11-dev libxft-dev libxinerama1 libxinerama-dev network-manager curl wget apt-transport-https dirmngr rsync dmenu python3 autoconf suckless-tools xorg software-properties-common cmake fonts-font-awesome fonts-roboto devscripts file-roller feh build-essential gtk2-engines-murrine gtk2-engines vim caca-utils highlight atool w3m poppler-utils mediainfo compton python3-pip libcanberra-gtk-module libgtk2.0-dev libgtk-3-dev gnome-devel imagemagick nnn tig arandr htop mesa-utils mesa-utils-extra emacs xsel bluez-cups blueman gpick tree ninja-build gettext libtool-bin g++ unzip jq nmap thunderbird ack neofetch crda net-tools rofi npm
 
 echo "Installing main Applications..."
 
@@ -59,6 +59,8 @@ sudo systemctl enable NetworkManager.service
 sudo apt autoremove -y
 
 sudo systemctl disable unattended-upgrades.service
+sudo systemctl disable cups.service
+sudo systemctl disable exim4.service
 
 ### Disable webcam by default
 ### Toogle back on with 'sudo modprobe uvcvideo'
