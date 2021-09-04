@@ -35,3 +35,9 @@ echo "Installing neovim..."
 chmod +x installations/install_neovim.sh
 bash installations/install_neovim.sh
 echo "Installed: neovim"
+
+### Install fonts
+echo "Installing fonts..."
+chmod +x installations/install_fonts.sh
+bash installations/install_fonts.sh
+echo "Installed: fonts"
