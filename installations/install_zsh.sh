@@ -8,3 +8,6 @@ sudo apt install zsh
 #export CHSH=yes
 #export RUNZSH=no
 #sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Set zsh as default shell (Also set SHELL in .xinitrc)
+sudo chsh -s $(which zsh)
