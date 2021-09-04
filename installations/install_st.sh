@@ -11,6 +11,7 @@
 cd /tmp/
 # git clone https://github.com/instantOS/st-instantos.git
 git clone https://github.com/FancyChaos/st-instantos.git
-cd st-instantos
+cd st-instantos/
+rm config.h || true
 make
 sudo make install

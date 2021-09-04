@@ -8,5 +8,5 @@ do
 done
 
 
-# Set wallpeper
-feh --bg-scale ~/.config/wallpaper/plant-onion.png &
+# Set wallpaper
+feh --bg-scale ~/.config/wallpaper/ghost-in-the-shell.jpg
