@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install zsh
-sudo apt install zsh
+sudo apt install zsh -y
 
 ### Cant manage to install oh my zsh automatically, dont care for now
 # Install oh my zsh
