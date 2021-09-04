@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Ask fur sudo password again
+sudo echo ""
+
 echo "Building and installing a dwm system for user $USER into $HOME"
 
 echo "Copying configuration files (/etc/, /usr/, ~/.config, etc.)..."
