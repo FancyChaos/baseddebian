@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# Ask fur sudo password again
-sudo echo ""
+# Get endless sudo permissions
+while true
+do
+	sudo -v
+	sleep 10
+done &
 
 echo "Building and installing a dwm system for user $USER into $HOME"
 
