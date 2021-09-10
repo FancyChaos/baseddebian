@@ -1,5 +1,5 @@
 # Start compositor
-compton -f &
+picom &
 sleep 2
 
 # Autostart stuff
