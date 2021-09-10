@@ -1,5 +1,12 @@
 #!/bin/bash
 
+### Install newest fixed version of libxft
+### No idea if I've done this right but it works
+echo "Installing libxft..."
+chmod +x installations/install_libxft.sh 
+bash installations/install_libxft.sh 
+echo "Installed: libxft"
+
 ### Install dwm
 echo "Installing FancyChao's custom dwm..."
 chmod +x installations/install_dwm.sh

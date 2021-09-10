@@ -1,12 +1,17 @@
 #!/bin/bash
 # Will be called on startup by the .xinitrc
 
+# Get important paths
+export PATH="$HOME/.local/bin/statusbar:$PATH"
+
 # Wait for dwm to startup
 while ! pgrep -x dwm > /dev/null
 do
-	sleep .5
+	sleep .2
 done
-
 
 # Set wallpaper
 feh --bg-scale ~/.config/wallpaper/ghost-in-the-shell.jpg
+
+# Start dwmblocks at last
+#dwmblocks
