@@ -8,16 +8,22 @@ bash installations/install_libxft.sh
 echo "Installed: libxft"
 
 ### Install dwm
-echo "Installing FancyChao's custom dwm..."
+echo "Installing dwm..."
 chmod +x installations/install_dwm.sh
 bash installations/install_dwm.sh
 echo "Installed: dwm"
 
 ### Install st
-echo "Installing FancyChao's custom st..."
+echo "Installing st..."
 chmod +x installations/install_st.sh
 bash installations/install_st.sh
 echo "Installed: st"
+
+### Install dwmblocks
+echo "Installing dwblocks..."
+chmod +x installations/install_dwmblocks.sh
+bash installations/install_dwmblocks.sh
+echo "Installed: dwblocks"
 
 ### Install zsh
 echo "Installing zsh..."
