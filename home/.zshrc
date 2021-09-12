@@ -24,7 +24,7 @@ ZSH_THEME="jonathan"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -42,7 +42,7 @@ ZSH_THEME="jonathan"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
@@ -76,7 +76,6 @@ plugins=(
 	zsh-syntax-highlighting
 	zsh-completions
 	zsh-history-substring-search
-	sudo
 	copydir
 	copyfile
 	copybuffer
