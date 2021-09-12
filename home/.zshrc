@@ -75,6 +75,7 @@ plugins=(
 	zsh-autosuggestions
 	zsh-syntax-highlighting
 	zsh-completions
+	zsh-history-substring-search
 	sudo
 	copydir
 	copyfile
