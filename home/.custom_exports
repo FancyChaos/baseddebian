@@ -1,0 +1,10 @@
+#!/bin/bash
+# Custom general exports which scripts can source
+
+# General exports
+export BROWSER=firefox
+export SHELL=zsh
+
+# Paths
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$HOME/.local/bin/statusbar:$PATH"

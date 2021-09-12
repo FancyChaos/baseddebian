@@ -1,8 +1,5 @@
 #!/bin/bash
-# Will be called on startup by the .xinitrc
-
-# Get important paths
-export PATH="$HOME/.local/bin/statusbar:$PATH"
+# Will be called on startup by .xinitrc
 
 # Wait for dwm to startup
 while ! pgrep -x dwm > /dev/null

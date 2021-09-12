@@ -7,6 +7,11 @@ cd libxft-bgra/
 sh autogen.sh --sysconfdir=/etc --prefix=/usr --mandir=/usr/share/man
 sudo make install
 
-# Copy fixed lib to /usr/lib/x86_64-linux-gnu/
-sudo cp /usr/lib/libXft.so.2.3.3 /usr/lib/x86_64-linux-gnu/
-sudo cp /usr/lib/libXft.so.2.3.3 /usr/lib/x86_64-linux-gnu/libXft.so.2
+# Link fixed files
+sudo rm /usr/lib/x86_64-linux-gnu/libXft.so.2.3.3 || true
+sudo rm /usr/lib/x86_64-linux-gnu/libXft.so.2 || true
+sudo rm /usr/lib/x86_64-linux-gnu/libXft.so || true
+
+sudo ln -s /usr/lib/libXft.so.2.3.3 /usr/lib/x86_64-linux-gnu/libXft.so.2.3.3
+sudo ln -s /usr/lib/libXft.so.2.3.3 /usr/lib/x86_64-linux-gnu/libXft.so.2
+sudo ln -s /usr/lib/libXft.so.2.3.3 /usr/lib/x86_64-linux-gnu/libXft.so

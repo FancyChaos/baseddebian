@@ -2,11 +2,11 @@
 picom &
 sleep 2
 
+# Source custom exports
+. ~/.custom_exports
+
 # Autostart stuff
 bash /usr/local/bin/debian-2021-startup &
-
-# Set zsh to the default shell
-export SHELL=zsh
 
 # Start ssh-agent
 eval `ssh-agent -s`
