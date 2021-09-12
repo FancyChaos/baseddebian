@@ -7,8 +7,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ziglang/zig.vim'
-Plug 'https://github.com/itchyny/calendar.vim'
+Plug 'itchyny/calendar.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'chrisbra/Colorizer'
 
 " Initialize plugin system
 call plug#end()
