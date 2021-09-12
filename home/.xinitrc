@@ -6,7 +6,7 @@ sleep 2
 . ~/.custom_exports
 
 # Autostart stuff
-bash /usr/local/bin/debian-2021-startup &
+debian-2021-startup &
 
 # Start ssh-agent
 eval `ssh-agent -s`

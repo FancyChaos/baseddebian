@@ -4,7 +4,9 @@
 # General exports
 export BROWSER=firefox
 export SHELL=zsh
+export TERMINAL=st
 
 # Paths
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH="$HOME/.local/bin/statusbar:$PATH"
+export PATH=$HOME/.local/bin/tools:$PATH
+export PATH=$HOME/.local/bin/statusbar:$PATH
