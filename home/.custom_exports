@@ -5,6 +5,7 @@
 export BROWSER=firefox
 export SHELL=zsh
 export TERMINAL=st
+export EDITOR=nvim
 
 # Paths
 export PATH=$HOME/bin:/usr/local/bin:$PATH
