@@ -49,6 +49,9 @@ xdg-user-dirs-update
 git config --global user.email "Felixs.Developer@tutanota.com"
 git config --global user.name "FancyChaos"
 
+# Generate new ssh keys without a password
+ssh-keygen -q -f $HOME/.ssh/git_key -t ecdsa -b 521 -N ""
+
 ### Fix broken packages for good measure (why not?)
 sudo apt install -f -y
 

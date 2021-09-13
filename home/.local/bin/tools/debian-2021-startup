@@ -10,5 +10,4 @@ done
 # Set wallpaper
 feh --bg-scale ~/.config/wallpaper/bb.jpg
 
-# Start dwmblocks at last
-#dwmblocks
+xsetroot -name "System is starting up..."
