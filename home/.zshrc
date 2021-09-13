@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-. ~/.custom_exports
+source $HOME/.custom_settings
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -83,16 +83,7 @@ plugins=(
 	autojump
 	k
 )
-
 source $ZSH/oh-my-zsh.sh
-
-# Aliases
-alias b="bat"
-alias v="nvim"
-alias c="nvim +Calendar"
-alias l="ls -lahrt"
-alias lgrep="grep --line-buffered"
-alias cf="copyfile"
 
 # Custom calls
 [[ -s /home/felix/.autojump/etc/profile.d/autojump.sh ]] && source /home/felix/.autojump/etc/profile.d/autojump.sh

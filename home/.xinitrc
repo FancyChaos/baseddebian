@@ -3,7 +3,7 @@ picom &
 sleep 2
 
 # Source custom exports
-. ~/.custom_exports
+. $HOME/.custom_settings
 
 # Autostart stuff
 debian-2021-startup &
