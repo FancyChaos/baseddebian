@@ -91,3 +91,6 @@ autoload -U compinit && compinit -u
 
 # Change default directory color to light blue
 eval $(dircolors -p | sed -e 's/DIR 01;34/DIR 01;36/' | dircolors /dev/stdin)
+
+# If you come from bash you might have to change your $PATH.
+source $HOME/.custom_settings

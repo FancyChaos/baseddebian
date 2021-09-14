@@ -37,6 +37,12 @@ chmod +x installations/install_bat.sh
 bash installations/install_bat.sh
 echo "Installed: bat"
 
+### Install logo-ls
+echo "Installing logo-ls..."
+chmod +x installations/install_logo-ls.sh
+bash installations/install_logo-ls.sh
+echo "Installed: logo-ls"
+
 ### Install neovim
 echo "Installing neovim..."
 chmod +x installations/install_neovim.sh
