@@ -34,7 +34,12 @@ sudo apt install -y $(cat $SCRIPTPATH/packets)
 
 echo "Installing main Applications..."
 
-bash installations/install_applications.sh
+for install_script in $(find installations/ -type f | sort); do
+	name=$(basename $install_script)
+	echo "Executing $name..."
+	chmod +x $install_script
+	./$install_script
+done
 
 echo "Done installing main Applications"
 
