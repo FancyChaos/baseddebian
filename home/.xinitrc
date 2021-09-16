@@ -12,4 +12,4 @@ debian-2021-startup &
 eval `ssh-agent -s`
 
 # Start the window manager
-exec dwm
+dbus-launch --exit-with-session dwm
