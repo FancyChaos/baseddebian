@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="sonicradish"
+ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -94,3 +94,10 @@ eval $(dircolors -p | sed -e 's/DIR 01;34/DIR 01;36/' | dircolors /dev/stdin)
 
 # If you come from bash you might have to change your $PATH.
 source $HOME/.custom_settings
+
+# Edit spaceship stuff (theme)
+eval spaceship_vi_mode_enable
+export SPACESHIP_EXIT_CODE_SHOW=true
+export SPACESHIP_TIME_SHOW=true
+export SPACESHIP_GIT_BRANCH_COLOR=green
+export SPACESHIP_VI_MODE_COLOR=blue

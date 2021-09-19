@@ -28,6 +28,10 @@ git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM
 # Install k
 git clone https://github.com/supercrabtree/k ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/k
 
+# Install spaceship theme
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
 # Install autojump
 cd /tmp/
 git clone git://github.com/wting/autojump.git
