@@ -187,3 +187,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Execute commands
+autocmd VimEnter * ColorHighlight
