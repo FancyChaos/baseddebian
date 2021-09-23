@@ -1,5 +1,5 @@
 # Start compositor
-picom &
+picom --unredir-if-possible --experimental-backends --vsync &
 sleep 2
 
 # Source custom exports
