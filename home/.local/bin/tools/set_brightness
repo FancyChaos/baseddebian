@@ -1,11 +1,17 @@
-#!/bin/zsh
-# Control the brightness by calling this script
-# > set_brightness +0.1
-# > set_brightness -0.1
+#!/bin/bash
+# Control the brightness by calling this script.
+# Number are used as the first decimal place.
+# > set_brightness +1 -> increase for 0.1
+# > set_brightness -1 -> decrease for 0.1
 
+# Get current brightness
 current=$(xrandr --verbose | grep -m 1 -i brightness | cut -f2 -d ' ')
 
-new=$(echo $current$1 | bc)
+# Get operation (- or +) and the amount to decrease/increase
+operator=${1:0:1}
+amount=${1:1:1}
+
+new=$(echo ${current}${operator}0.${amount} | bc)
 
 for con in $(xrandr | grep " connected" | cut -f1 -d " ")
 do
