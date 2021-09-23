@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ### This script is for executing the main script and logging its output
 
@@ -15,7 +15,7 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 export SCRIPTPATH
 
 ### Install essentials if they are not yet installed
-sudo apt install -y coreutils build-essential rsync wget curl
+sudo apt install -y coreutils build-essential rsync wget curl bash
 
 cd $SCRIPTPATH
 
