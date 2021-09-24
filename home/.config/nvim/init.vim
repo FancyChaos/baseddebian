@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
+Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ziglang/zig.vim'
 Plug 'itchyny/calendar.vim'
@@ -15,7 +16,7 @@ Plug 'chrisbra/Colorizer'
 call plug#end()
 
 set number
-set mouse=a
+set mouse=v
 
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
@@ -184,9 +185,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Setup tab key
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab 
 
 " Execute commands
 autocmd VimEnter * ColorHighlight
