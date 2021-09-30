@@ -1,15 +1,22 @@
 #!/bin/bash
 # Will be called on startup by .xinitrc
 
+# TODO: Make this a systemd file for startup (service)
+
 # Wait for dwm to startup
 while ! pgrep -x dwm > /dev/null
 do
 	sleep .2
 done
 
+# Source aliases and path for this script
 source $HOME/.custom_settings
 
 # Set wallpaper
 feh --bg-scale ~/.config/wallpaper/bb.jpg
 
-xsetroot -name "System is starting up..."
+# Start dwmblocks
+dwmblocks &
+
+# Start keep_alive script (monitor applications)
+bash ~/.local/bin/tools/debian-2021-keep_alive &> /dev/null

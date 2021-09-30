@@ -1,0 +1,40 @@
+#!/bin/bash
+# Will be called on startup by the debian-2021-startup script
+# This script will restart essential applications if they quit
+
+# TODO: Make this a systemd file too (service)
+
+services=(
+    "picom"
+    "picom --unredir-if-possible --experimental-backends --vsync &"
+
+    "dwmblocks"
+    "dwmblocks &"
+)
+
+restart_if_dead() {
+    pid=$(pidof "${1}")
+    if [ -z "${pid}" ]; then
+        eval "${2}"
+    fi
+}
+
+# Source aliases and path for this script
+source $HOME/.custom_settings
+
+# Wait for dwm to startup
+while ! pgrep -x dwm > /dev/null
+do
+        sleep .2
+done
+
+# Keep services alive
+while true
+do
+    for (( i=0; i<${#services[*]}; i+=2 ));
+    do
+        restart_if_dead "${services[${i}]}" "${services[${i}+1]}"
+    done
+
+    sleep 3
+done
