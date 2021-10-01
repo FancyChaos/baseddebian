@@ -15,6 +15,6 @@ cd /tmp/
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 pip3 install --user neovim
 
-mkdir -p $HOME/.config/nvim/plugged/
+mkdir -p $HOME/.config/nvim/plugged/ || true
 
 nvim -c PlugInstall -c UpdateRemotePlugins -c quitall

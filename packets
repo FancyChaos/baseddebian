@@ -73,3 +73,4 @@ libx11-xcb-dev
 libxcb-res0-dev
 thunar
 git
+dbus-launch

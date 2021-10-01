@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Path of custom zsh folder
+ZSH_CUSTOM=~/.oh-my-zsh/custom
+
 # Install zsh
 sudo apt install zsh -y
 

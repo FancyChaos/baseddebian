@@ -4,7 +4,7 @@
 while true
 do
 	sudo -v
-	sleep 10
+	sleep 5
 done &
 
 echo "Building and installing a dwm system for user $USER into $HOME"
@@ -12,8 +12,8 @@ echo "Building and installing a dwm system for user $USER into $HOME"
 echo "Copying configuration files (/etc/, ~/.config, etc.)..."
 
 ### creating dirs
-mkdir $HOME/.config/
-mkdir $HOME/GitRepos/
+mkdir $HOME/.config/ || true
+mkdir $HOME/GitRepos/ || true
 
 ### copying /etc/ files
 sudo rsync -avr etc/ /etc/
