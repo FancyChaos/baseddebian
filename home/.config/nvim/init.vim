@@ -185,7 +185,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " Setup tab key
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab 
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab 
 
 " Execute commands
 autocmd VimEnter * ColorHighlight
