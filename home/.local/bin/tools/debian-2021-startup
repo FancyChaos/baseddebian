@@ -13,10 +13,7 @@ done
 source $HOME/.custom_settings
 
 # Set wallpaper
-feh --bg-scale ~/.config/wallpaper/bb.jpg
+feh --bg-scale ${WALLPAPER}
 
-# Start dwmblocks
-dwmblocks &
-
-# Start keep_alive script (monitor applications)
+# Start keep_alive script (Application monitoring)
 bash ~/.local/bin/tools/debian-2021-keep_alive &> /dev/null

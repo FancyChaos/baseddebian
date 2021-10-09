@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Custom general exports which scripts can source
 
 # General exports
@@ -10,6 +12,9 @@ export EDITOR=nvim
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.local/bin/tools:$PATH
 export PATH=$HOME/.local/bin/statusbar:$PATH
+
+# Custom use exports
+export WALLPAPER=$HOME/.config/wallpaper/bb.jpg
 
 # Aliases
 alias b="bat"

@@ -4,6 +4,9 @@
 
 # TODO: Make this a systemd file too (service)
 
+# Wait a second to let stuff startup
+sleep 5
+
 services=(
     "picom"
     "picom --unredir-if-possible --experimental-backends --vsync &"
