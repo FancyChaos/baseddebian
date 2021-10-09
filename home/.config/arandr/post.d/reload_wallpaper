@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Adjust wallpaper if xrandr change was made
+
+source $HOME/.custom_settings
+
+feh --bg-scale ${WALLPAPER}
