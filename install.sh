@@ -30,7 +30,7 @@ echo "Installing packages..."
 sudo apt update && sudo apt upgrade -y
 
 ### installing packages and default applications
-sudo apt install -y $(cat $SCRIPTPATH/packets)
+sudo apt install -y $(cat $SCRIPTPATH/packages)
 
 echo "Installing main Applications..."
 
