@@ -15,7 +15,7 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 export SCRIPTPATH
 
 ### Install essentials if they are not yet installed
-sudo apt install -y coreutils build-essential rsync wget curl bash
+sudo apt install -y coreutils build-essential rsync wget curl bash fasttrack-archive-keyring
 
 cd $SCRIPTPATH
 
