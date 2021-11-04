@@ -64,3 +64,4 @@ git
 dbus-x11
 libharfbuzz-dev
 libxrandr-dev
+npm

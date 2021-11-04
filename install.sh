@@ -65,6 +65,9 @@ sudo apt autoremove -y
 sudo apt remove python-is-python2 -y
 sudo ln -s $(which python3) /usr/local/bin/python
 
+# Cleanup openrc services
+sudo rc-update delete unattended-upgrades default
+
 ### Disable webcam by default
 ### Toogle back on with 'sudo modprobe uvcvideo'
 sudo modprobe -r uvcvideo
