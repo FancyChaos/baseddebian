@@ -1,16 +1,20 @@
-#------------------------------------------------------------------------------#
-#                   OFFICIAL DEBIAN BULLSEYE REPOS                    
-#------------------------------------------------------------------------------#
-deb http://deb.debian.org/debian/ bullseye main contrib non-free
-deb-src http://deb.debian.org/debian/ bullseye main contrib non-free
+# deb cdrom:[Devuan GNU/Linux 4.0 chimaera amd64 - netinstall 20211012]/ chimaera contrib main non-free
 
-deb http://security.debian.org/debian-security bullseye-security main contrib non-free
-deb-src http://security.debian.org/debian-security bullseye-security main contrib non-free
+#deb cdrom:[Devuan GNU/Linux 4.0 chimaera amd64 - netinstall 20211012]/ chimaera contrib main non-free
 
-deb http://deb.debian.org/debian/ bullseye-updates main contrib non-free
-deb-src http://deb.debian.org/debian/ bullseye-updates main contrib non-free
+deb http://deb.devuan.org/merged chimaera main contrib non-free
+deb-src http://deb.devuan.org/merged chimaera main contrib non-free
 
-deb http://deb.debian.org/debian bullseye-backports main
+deb http://pkgmaster.devuan.org/merged chimaera-security main contrib non-free
+deb-src http://pkgmaster.devuan.org/merged chimaera-security main contrib non-free
 
-deb https://fasttrack.debian.net/debian-fasttrack/ bullseye-fasttrack main contrib
-deb https://fasttrack.debian.net/debian-fasttrack/ bullseye-backports-staging main contrib
+# chimaera-updates, to get updates before a point release is made;
+# see https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backports
+deb http://deb.devuan.org/merged chimaera-updates main contrib non-free
+deb-src http://deb.devuan.org/merged chimaera-updates main contrib non-free
+
+# This system was installed using small removable media
+# (e.g. netinst, live or single CD). The matching "deb cdrom"
+# entries were disabled at the end of the installation process.
+# For information about how to configure apt package sources,
+# see the sources.list(5) manual.
