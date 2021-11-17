@@ -28,4 +28,6 @@ alias l="logo-ls -D"
 alias m="make"
 alias mc="rm -f config.h ; make"
 alias mi="sudo make install"
-alias sb="set_brightness"
+alias fb="fbrightness"
+# serversync
+alias ssync="rsync -zav -e 'ssh -p 1337' --progress"

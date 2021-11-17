@@ -1,5 +1,5 @@
 #!/bin/bash
-# Will be called on startup by the debian-2021-startup script
+# Will be called on startup by the fstartup script
 # This script will restart essential applications if they quit
 
 # TODO: Make this a systemd file too (service)

@@ -16,4 +16,4 @@ source $HOME/.custom_settings
 feh --bg-scale ${WALLPAPER}
 
 # Start keep_alive script (Application monitoring)
-bash ~/.local/bin/tools/debian-2021-keep_alive &> /dev/null
+bash ~/.local/bin/tools/falive &> /dev/null

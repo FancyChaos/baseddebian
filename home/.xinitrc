@@ -6,7 +6,7 @@ sleep 2
 . $HOME/.custom_settings
 
 # Autostart stuff
-debian-2021-startup &
+fstartup &
 
 # Start ssh-agent
 eval `ssh-agent -s`
