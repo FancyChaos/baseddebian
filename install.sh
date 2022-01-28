@@ -16,10 +16,10 @@ mkdir $HOME/.config/ || true
 mkdir $HOME/GitRepos/ || true
 
 ### copying /etc/ files
-sudo rsync -avr etc/ /etc/
+sudo rsync -avr rootfs/etc/ /etc/
 
 ### copying configs
-rsync -avr home/ $HOME/
+rsync -avr rootfs/home/ $HOME/
 
 # Make custom scripts executable (be sure)
 sudo chmod +x $HOME/.local/bin/tools/*
@@ -66,7 +66,7 @@ sudo systemctl enable NetworkManager.service
 
 ### Cleanup
 sudo apt autoremove -y
-sudo apt remove python-is-python2 -y
+sudo apt remove python-is-python2 -y || true
 sudo ln -s $(which python3) /usr/local/bin/python
 
 sudo systemctl disable unattended-upgrades.service
