@@ -6,7 +6,7 @@ sleep 2
 . /etc/fos/config/fos_bash_settings
 
 # Autostart stuff
-./etc/fos/system/fstartup &
+/etc/fos/system/fstartup &
 
 # Start ssh-agent
 eval `ssh-agent -s`
