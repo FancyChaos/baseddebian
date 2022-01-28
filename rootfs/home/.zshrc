@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-source $HOME/.custom_settings
+source /etc/fos/config/fos_bash_settings
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -81,7 +81,6 @@ plugins=(
 	copybuffer
 	dirhistory
 	autojump
-	k
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -92,12 +91,12 @@ autoload -U compinit && compinit -u
 # Change default directory color to light blue
 eval $(dircolors -p | sed -e 's/DIR 01;34/DIR 01;36/' | dircolors /dev/stdin)
 
-# If you come from bash you might have to change your $PATH.
-source $HOME/.custom_settings
-
 # Edit spaceship stuff (theme)
-eval spaceship_vi_mode_enable
 export SPACESHIP_EXIT_CODE_SHOW=true
 export SPACESHIP_TIME_SHOW=true
 export SPACESHIP_GIT_BRANCH_COLOR=green
 export SPACESHIP_VI_MODE_COLOR=blue
+
+# Keybindings
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
