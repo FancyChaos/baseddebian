@@ -1,8 +1,8 @@
 #!/bin/bash
 # Control the brightness by calling this script.
 # Number are used as the first decimal place.
-# > set_brightness +1 -> increase for 0.1
-# > set_brightness -1 -> decrease for 0.1
+# > fbrightness +1 -> increase for 0.1
+# > fbrightness -1 -> decrease for 0.1
 
 # Get current brightness
 current=$(xrandr --verbose | grep -m 1 -i brightness | cut -f2 -d ' ')

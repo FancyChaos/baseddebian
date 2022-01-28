@@ -10,8 +10,8 @@ export EDITOR=nvim
 
 # Paths
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.local/bin/tools:$PATH
-export PATH=$HOME/.local/bin/statusbar:$PATH
+export PATH=/etc/fos/bin:$PATH
+export PATH=/etc/fos/statusbar:$PATH
 
 # Custom use exports
 export WALLPAPER=$HOME/.config/wallpaper/bb.jpg
@@ -28,4 +28,6 @@ alias l="logo-ls -D"
 alias m="make"
 alias mc="rm -f config.h ; make"
 alias mi="sudo make install"
-alias sb="set_brightness"
+alias fb="fbrightness"
+# serversync
+alias ssync="rsync -zav -e 'ssh -p 1337' --progress"

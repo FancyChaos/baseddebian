@@ -1,5 +1,5 @@
 #!/bin/bash
-# Will be called on startup by the debian-2021-startup script
+# Will be called on startup by the fstartup script
 # This script will restart essential applications if they quit
 
 # TODO: Make this a systemd file too (service)
@@ -23,7 +23,7 @@ restart_if_dead() {
 }
 
 # Source aliases and path for this script
-source $HOME/.custom_settings
+source /etc/fos/config/fos_bash_settings
 
 # Wait for dwm to startup
 while ! pgrep -x dwm > /dev/null

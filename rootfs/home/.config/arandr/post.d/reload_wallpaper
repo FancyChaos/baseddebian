@@ -2,6 +2,6 @@
 
 # Adjust wallpaper if xrandr change was made
 
-source $HOME/.custom_settings
+source /etc/fos/config/fos_bash_settings
 
 feh --bg-scale ${WALLPAPER}

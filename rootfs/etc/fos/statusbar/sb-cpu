@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cpu_usage=$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]
+printf "%s %s%%\n" "⚙️" "$cpu_usage" 
