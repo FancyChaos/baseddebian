@@ -5,7 +5,7 @@ cd /tmp/
 ### Install neovim v.0.5.0
 git clone https://github.com/neovim/neovim.git
 cd neovim/
-git checkout tags/v0.5.0
+git checkout tags/v0.6.1
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
