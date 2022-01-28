@@ -22,7 +22,9 @@ sudo rsync -avr rootfs/etc/ /etc/
 rsync -avr rootfs/home/ $HOME/
 
 # Make custom scripts executable (be sure)
-sudo chmod +x $HOME/.local/bin/tools/*
+sudo chmod -R +x /etc/fos/bin/*
+sudo chmod -R +x /etc/fos/statusbar/*
+sudo chmod -R +x /etc/fos/system/*
 
 echo "Installing packages..."
 

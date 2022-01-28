@@ -16,4 +16,7 @@ source $HOME/.custom_settings
 feh --bg-scale ${WALLPAPER}
 
 # Start keep_alive script (Application monitoring)
-bash ~/.local/bin/tools/falive &> /dev/null
+while true
+do
+    bash /etc/fos/system/falive &> /dev/null
+done

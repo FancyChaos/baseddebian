@@ -6,7 +6,7 @@ sleep 2
 . $HOME/.custom_settings
 
 # Autostart stuff
-fstartup &
+./etc/fos/system/fstartup &
 
 # Start ssh-agent
 eval `ssh-agent -s`

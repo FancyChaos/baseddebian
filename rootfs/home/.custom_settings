@@ -10,8 +10,8 @@ export EDITOR=nvim
 
 # Paths
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.local/bin/tools:$PATH
-export PATH=$HOME/.local/bin/statusbar:$PATH
+export PATH=/etc/fos/bin:$PATH
+export PATH=/etc/fos/statusbar:$PATH
 
 # Custom use exports
 export WALLPAPER=$HOME/.config/wallpaper/bb.jpg
