@@ -52,6 +52,9 @@ cd $SCRIPTPATH
 ### creating dirs like "Pictures", "Downloads" etc.
 xdg-user-dirs-update
 
+# Update tldr database
+tldr -u
+
 ### Git env
 git config --global user.email "Felixs.Developer@tutanota.com"
 git config --global user.name "FancyChaos"
