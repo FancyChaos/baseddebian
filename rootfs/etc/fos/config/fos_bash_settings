@@ -7,6 +7,7 @@ export BROWSER=firefox
 export SHELL=zsh
 export TERMINAL=st
 export EDITOR=nvim
+export MANPAGER="bat --paging=always"
 
 # Paths
 export PATH=$HOME/bin:/usr/local/bin:$PATH
