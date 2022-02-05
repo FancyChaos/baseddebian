@@ -31,5 +31,6 @@ alias mc="rm -f config.h ; make"
 alias mi="sudo make install"
 alias fb="fbrightness"
 alias allmod="find /lib/modules/$(uname -r) -type f -name '*.ko*'"
-# serversync
+
+# serversync (very custom)
 alias ssync="rsync -zav -e 'ssh -p 1337' --progress"

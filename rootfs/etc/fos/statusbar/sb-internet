@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 case "$(cat /sys/class/net/w*/operstate 2>/dev/null)" in
 	down) wifiicon="睊" ;;
