@@ -23,7 +23,7 @@ restart_if_dead() {
 }
 
 # Source aliases and path for this script
-source /etc/fos/config/fos_bash_settings
+source /etc/fos/config/fos_shell_settings
 
 # Wait for dwm to startup
 while ! pgrep -x dwm > /dev/null

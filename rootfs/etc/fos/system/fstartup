@@ -10,7 +10,7 @@ do
 done
 
 # Source aliases and path for this script
-source /etc/fos/config/fos_bash_settings
+source /etc/fos/config/fos_shell_settings
 
 # Set wallpaper
 feh --bg-scale ${WALLPAPER}

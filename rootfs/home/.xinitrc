@@ -7,7 +7,7 @@ picom --unredir-if-possible --experimental-backends --vsync &
 sleep 2
 
 # Source custom exports
-. /etc/fos/config/fos_bash_settings
+. /etc/fos/config/fos_shell_settings
 
 # Autostart stuff
 /etc/fos/system/fstartup &
