@@ -189,3 +189,6 @@ set softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Execute commands
 autocmd VimEnter * ColorHighlight
+
+highlight RedundantSpaces ctermbg=red guibg=red
+match RedundantSpaces /\s\+$/
