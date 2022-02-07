@@ -15,6 +15,9 @@ source /etc/fos/config/fos_shell_settings
 # Set wallpaper
 feh --bg-scale ${WALLPAPER}
 
+# Start notification daemon
+dunst &
+
 # Start keep_alive script (Application monitoring)
 while true
 do

@@ -13,6 +13,9 @@ services=(
 
     "dwmblocks"
     "dwmblocks &"
+
+    "dunst"
+    "dunst &"
 )
 
 restart_if_dead() {

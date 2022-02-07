@@ -18,6 +18,16 @@ for battery in /sys/class/power_supply/BAT?*; do
                 "Discharging") status="ﮤ" ;;
 	esac
 
+        # Warn constantly when under 10%
+        lockfile="/tmp/sb-battery-low"
+        if [[ "$status" != "ﮣ" ]] && [[ "$capacity" -le 10 ]] && [[ ! -f "$lockfile" ]]
+        then
+            touch $lockfile
+            notify-send -u critical -t 8000 -h int:value:"$capacity" "I'am low on health!"
+            sleep 60 && rm $lockfile &
+        fi
+
+
 	# Will make a warn variable if discharging and low
 	warn=""
 	[ "$status" = "ﮤ" ] && [ "$capacity" -le 25 ] && warn=""
