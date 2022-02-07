@@ -11,8 +11,17 @@ current=$(xrandr --verbose | grep -m 1 -i brightness | cut -f2 -d ' ')
 operator=${1:0:1}
 amount=${1:1:1}
 
+# Calculate new brightness value
 new=$(echo ${current}${operator}0.${amount} | bc)
 
+# Brightness can't be lower than 0.2 or higher than 1
+(( $(echo "$new < 0.2" | bc -l) )) && exit
+(( $(echo "$new > 1" | bc -l) )) && exit
+
+# Send brightness status
+notify-send -t 2000 -h int:value:$(echo "$new*100" | bc) "Brightness"
+
+# Set brightness
 for con in $(xrandr | grep " connected" | cut -f1 -d " ")
 do
 	xrandr --output $con --brightness $new &> /dev/null
