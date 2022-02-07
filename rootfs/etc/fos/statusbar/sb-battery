@@ -23,7 +23,7 @@ for battery in /sys/class/power_supply/BAT?*; do
         if [[ "$status" != "ﮣ" ]] && [[ "$capacity" -le 10 ]] && [[ ! -f "$lockfile" ]]
         then
             touch $lockfile
-            notify-send -u critical -t 8000 -h int:value:"$capacity" "I'am low on health!"
+            notify-send -u critical -t 8000 -h int:value:"$capacity" -h string:hlcolor:"#F5292E" "I'am low on health!"
             sleep 60 && rm $lockfile &
         fi
 
