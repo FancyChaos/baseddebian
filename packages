@@ -79,3 +79,7 @@ liblz4-tool
 xclip
 libnotify-dev
 libxss-dev
+keepassxc
+python3-venv
+tcpdump
+gparted
