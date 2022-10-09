@@ -1,3 +1,7 @@
+xorg
+xorg-dev
+xutils-dev
+x11-xserver-utils
 firmware-linux-free
 firmware-linux-nonfree
 firmware-iwlwifi
@@ -36,9 +40,6 @@ poppler-utils
 mediainfo
 compton
 python3-pip
-libcanberra-gtk-module
-libgtk2.0-dev
-libgtk-3-dev
 gnome-devel
 imagemagick
 nnn
@@ -52,7 +53,6 @@ bluez-cups
 blueman
 gpick
 tree
-ninja-build
 gettext
 libtool-bin
 g++
@@ -83,3 +83,4 @@ keepassxc
 python3-venv
 tcpdump
 gparted
+exa

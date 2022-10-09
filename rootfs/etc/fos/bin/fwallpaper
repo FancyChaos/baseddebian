@@ -1,0 +1,3 @@
+#!/bin/sh
+. /etc/fos/config/fos_shell_settings
+feh --bg-fill ${WALLPAPER}

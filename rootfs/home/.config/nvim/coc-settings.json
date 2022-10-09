@@ -1,8 +1,0 @@
-{
-   "languageserver": {
-       "zls" : {
-           "command": "/home/felix/.zls/zls",
-           "filetypes": ["zig"]
-       }
-   }
-}
