@@ -31,7 +31,7 @@ export EDITOR=$(which nvim)
 export TERM=xterm-256color
 
 # Custom use exports
-export WALLPAPER=/etc/fos/wallpapers/bastion.png
+export WALLPAPER=/etc/fos/wallpapers/vhs_girl.png
 export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border sharp --color dark'
 
 # Aliases

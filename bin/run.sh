@@ -4,6 +4,13 @@
 echo "Enter sudo password"
 sudo echo "" || exit 1
 
+# Get endless sudo permissions
+while true
+do
+	sudo -v
+	sleep 5
+done &
+
 # Get path of script
 SCRIPTPATH=$(pwd -P)
 export SCRIPTPATH
@@ -19,18 +26,8 @@ cd $SCRIPTPATH
 # Make sure everything is executable
 chmod +x installations/*
 
-# Get endless sudo permissions
-while true
-do
-	sudo -v
-	sleep 5
-done &
-
 # Set defaut shell to bash
 chsh -s $(which bash)
-
-# creating dirs like "Pictures", "Downloads" etc.
-xdg-user-dirs-update
 
 # creating dirs
 mkdir $HOME/.config/ || true
@@ -41,6 +38,9 @@ sudo rsync -avr rootfs/etc/ /etc/
 
 # Update and upgrade here due to copied sources.list
 sudo apt-get update && sudo apt-get upgrade -y
+
+# creating dirs like "Pictures", "Downloads" etc.
+xdg-user-dirs-update
 
 # copying configs
 rsync -avr rootfs/home/ $HOME/
