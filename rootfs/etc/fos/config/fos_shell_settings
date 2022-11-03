@@ -39,7 +39,7 @@ alias lgrep="grep --color=auto --line-buffered"
 alias grep="grep --color=auto"
 alias m='make'
 alias mc="make"
-alias mi="sudo make install"
+alias mi="doas make install"
 alias fb="fbrightness"
 alias allmod="find /lib/modules/$(uname -r) -type f -name '*.ko*'"
 alias b='bat --theme ansi'

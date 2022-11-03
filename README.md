@@ -5,7 +5,7 @@ My own scripts to setting up an dwm environment from a freshly installed Debian 
 
  1. Install a new Debian Bullseye (11) base system
  2. Open your Terminal and install git
-	> sudo apt install git
+	> doas apt install git
  3. Clone this repository and move into it
 	> git clone https://github.com/FancyChaos/debian-2021.git && cd debian-2021
  4. Make the run.sh script executable and run it

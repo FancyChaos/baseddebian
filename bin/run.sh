@@ -1,25 +1,18 @@
 #!/bin/bash
 
-# Start sudo session (will last 15minutes)
-echo "Enter sudo password"
-sudo echo "" || exit 1
-
-# Get endless sudo permissions
-while true
-do
-	sudo -v
-	sleep 5
-done &
+# Start doas session (will last 15minutes)
+echo "Enter doas password"
+doas echo "" || exit 1
 
 # Get path of script
 SCRIPTPATH=$(pwd -P)
 export SCRIPTPATH
 
 # Update
-sudo apt-get update
+doas apt-get update
 
 # Install essentials if they are not yet installed
-sudo apt-get install -y coreutils build-essential rsync wget curl bash fasttrack-archive-keyring
+doas apt-get install -y coreutils build-essential rsync wget curl bash fasttrack-archive-keyring
 
 cd $SCRIPTPATH
 
@@ -34,10 +27,10 @@ mkdir $HOME/.config/ || true
 mkdir $HOME/GitRepos/ || true
 
 # copying /etc/ files
-sudo rsync -avr rootfs/etc/ /etc/
+doas rsync -avr rootfs/etc/ /etc/
 
 # Update and upgrade here due to copied sources.list
-sudo apt-get update && sudo apt-get upgrade -y
+doas apt-get update && doas apt-get upgrade -y
 
 # creating dirs like "Pictures", "Downloads" etc.
 xdg-user-dirs-update
@@ -46,11 +39,11 @@ xdg-user-dirs-update
 rsync -avr rootfs/home/ $HOME/
 
 # Make custom scripts executable (be sure)
-sudo chmod -R +x /etc/fos/bin/*
-sudo chmod -R +x /etc/fos/statusbar/*
+doas chmod -R +x /etc/fos/bin/*
+doas chmod -R +x /etc/fos/statusbar/*
 
 # installing packages and default applications
-sudo apt-get install -y $(cat $SCRIPTPATH/packages)
+doas apt-get install -y $(cat $SCRIPTPATH/packages)
 
 # Execute install scripts
 for install_script in $(find installations/ -type f | sort); do
@@ -73,33 +66,33 @@ git config --global user.name "FancyChaos"
 [ ! -f $HOME/.ssh/git_key ] && ssh-keygen -q -f $HOME/.ssh/git_key -t ecdsa -b 521 -N ""j
 
 # Fix broken packages for good measure (why not?)
-sudo apt-get install -f -y
+doas apt-get install -f -y
 
 # Deactivate systemd-networkd for good measure
-sudo systemctl disable systemd-networkd.service
-sudo systemctl enable NetworkManager.service
+doas systemctl disable systemd-networkd.service
+doas systemctl enable NetworkManager.service
 
 # Cleanup
-sudo apt-get autoremove -y
-sudo apt-get remove python-is-python2 -y || true
-sudo ln -s $(which python3) /usr/local/bin/python
+doas apt-get autoremove -y
+doas apt-get remove python-is-python2 -y || true
+doas ln -s $(which python3) /usr/local/bin/python
 
-sudo systemctl disable unattended-upgrades.service
-sudo systemctl disable cups.service
-sudo systemctl disable exim4.service
-sudo systemctl disable bluetooth.service
-sudo systemctl disable blueman-mechanism.service
+doas systemctl disable unattended-upgrades.service
+doas systemctl disable cups.service
+doas systemctl disable exim4.service
+doas systemctl disable bluetooth.service
+doas systemctl disable blueman-mechanism.service
 
 # Disable tracker (Data indexing for GNOME mostly)
 systemctl --user mask tracker-store.service tracker-miner-fs.service tracker-miner-rss.service tracker-extract.service tracker-miner-apps.service tracker-writeback.service
 systemctl --user mask gvfs-udisks2-volume-monitor.service gvfs-metadata.service gvfs-daemon.service
 
 # Disable webcam by default
-# Toogle back on with 'sudo modprobe uvcvideo'
-sudo modprobe -r uvcvideo
+# Toogle back on with 'doas modprobe uvcvideo'
+doas modprobe -r uvcvideo
 
 # Boot into command line
-sudo systemctl set-default multi-user.target
+doas systemctl set-default multi-user.target
 
 # Done
 echo "Installation done"

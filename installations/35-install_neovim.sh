@@ -7,7 +7,7 @@ git clone https://github.com/neovim/neovim.git
 cd neovim/
 git checkout tags/v0.8.0
 make CMAKE_BUILD_TYPE=RelWithDebInfo
-sudo make install
+doas make install
 
 cd /tmp/
 
