@@ -60,7 +60,6 @@ for install_script in $(find installations/ -type f | sort); do
 	./$install_script
 done
 
-
 cd $SCRIPTPATH
 
 # Update tldr database
@@ -91,6 +90,9 @@ sudo systemctl disable exim4.service
 sudo systemctl disable bluetooth.service
 sudo systemctl disable blueman-mechanism.service
 
+# Disable tracker (Data indexing for GNOME mostly)
+systemctl --user mask tracker-store.service tracker-miner-fs.service tracker-miner-rss.service tracker-extract.service tracker-miner-apps.service tracker-writeback.service
+systemctl --user mask gvfs-udisks2-volume-monitor.service gvfs-metadata.service gvfs-daemon.service
 
 # Disable webcam by default
 # Toogle back on with 'sudo modprobe uvcvideo'
