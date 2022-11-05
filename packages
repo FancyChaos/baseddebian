@@ -1,3 +1,5 @@
+brightnessctl
+libharfbuzz-dev
 libbsd-dev
 libbsd0
 xorg
@@ -28,11 +30,8 @@ cmake
 fonts-font-awesome
 fonts-roboto
 devscripts
-file-roller
 feh
 build-essential
-gtk2-engines-murrine
-gtk2-engines
 vim
 caca-utils
 highlight
@@ -40,16 +39,13 @@ atool
 w3m
 poppler-utils
 mediainfo
-compton
 python3-pip
-gnome-devel
 imagemagick
 nnn
 tig
 htop
 mesa-utils
 mesa-utils-extra
-emacs
 xsel
 bluez-cups
 blueman
@@ -66,7 +62,6 @@ ack
 neofetch
 crda
 net-tools
-npm
 python
 picom
 xutils-dev

@@ -9,6 +9,7 @@ export PATH=$PATH:$HOME/bin:/usr/local/bin
 export PATH=$PATH:/etc/fos/bin
 export PATH=$PATH:/etc/fos/statusbar
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/sbin:/usr/sbin
 
 # XDG exports
 export XDG_CONFIG_HOME=$HOME/.config
@@ -35,11 +36,12 @@ export WALLPAPER=/etc/fos/wallpapers/vhs_girl.png
 export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border sharp --color dark'
 
 # Aliases
+alias sudo="doas"
 alias lgrep="grep --color=auto --line-buffered"
 alias grep="grep --color=auto"
 alias m='make'
 alias mc="make"
-alias mi="sudo make install"
+alias mi="doas make install"
 alias fb="fbrightness"
 alias allmod="find /lib/modules/$(uname -r) -type f -name '*.ko*'"
 alias b='bat --theme ansi'
@@ -57,6 +59,7 @@ alias fmv='mv -v $(ff)'
 alias ssh='EDITOR=vim TERM=xterm ssh'
 alias fcp='xclip -sel c'
 alias rm='rm -i'
+alias br="brightnessctl"
 
 # serversync (very custom)
 alias ssync="rsync -zav -e 'ssh -p 1337' --progress"
