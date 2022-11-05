@@ -87,6 +87,9 @@ doas systemctl disable blueman-mechanism.service
 systemctl --user mask tracker-store.service tracker-miner-fs.service tracker-miner-rss.service tracker-extract.service tracker-miner-apps.service tracker-writeback.service
 systemctl --user mask gvfs-udisks2-volume-monitor.service gvfs-metadata.service gvfs-daemon.service
 
+doas systemctl disable unattended-upgrades.service
+doas systemctl disable packagekit.service packagekit-offline-update.service
+
 # Disable webcam by default
 # Toogle back on with 'doas modprobe uvcvideo'
 doas modprobe -r uvcvideo

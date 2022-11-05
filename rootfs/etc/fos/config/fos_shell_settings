@@ -35,6 +35,7 @@ export WALLPAPER=/etc/fos/wallpapers/vhs_girl.png
 export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border sharp --color dark'
 
 # Aliases
+alias sudo="doas"
 alias lgrep="grep --color=auto --line-buffered"
 alias grep="grep --color=auto"
 alias m='make'
