@@ -92,7 +92,9 @@ doas systemctl disable packagekit.service packagekit-offline-update.service
 
 # Disable webcam by default
 # Toogle back on with 'doas modprobe uvcvideo'
-doas modprobe -r uvcvideo
+MP=/usr/sbin/modprobe
+which modprobe && MP=$(which modprobe)
+doas $MP -r uvcvideo
 
 # Boot into command line
 doas systemctl set-default multi-user.target
