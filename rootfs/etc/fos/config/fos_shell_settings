@@ -36,13 +36,13 @@ export WALLPAPER=/etc/fos/wallpapers/vhs_girl.png
 export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border sharp --color dark'
 
 # Aliases
-alias sudo="doas"
-alias lgrep="grep --color=auto --line-buffered"
-alias grep="grep --color=auto"
+alias sudo='doas'
+alias lgrep='grep --color=auto --line-buffered'
+alias grep='grep --color=auto'
 alias m='make'
-alias mc="make"
-alias mi="doas make install"
-alias fb="fbrightness"
+alias mc='make clean'
+alias mi='doas make install'
+alias fb='fbrightness'
 alias allmod="find /lib/modules/$(uname -r) -type f -name '*.ko*'"
 alias b='bat --theme ansi'
 alias v='nvim'
@@ -50,7 +50,7 @@ alias c='nvim +Calendar'
 alias ls='exa'
 alias l='exa -lahr'
 alias f='fzf'
-alias ff='fzf --height 100% --preview "head -n 50 {}" --preview-window down'
+alias ff="fzf --height 100% --preview 'head -n 50 {}' --preview-window down"
 alias fv='nvim $(f)'
 alias fvv='nvim $(ff)'
 alias fcd='cd $(dirname $(f))'
@@ -59,7 +59,8 @@ alias fmv='mv -v $(ff)'
 alias ssh='EDITOR=vim TERM=xterm ssh'
 alias fcp='xclip -sel c'
 alias rm='rm -i'
-alias br="brightnessctl"
+alias br='brightnessctl'
+alias s='sxiv'
 
 # serversync (very custom)
 alias ssync="rsync -zav -e 'ssh -p 1337' --progress"
