@@ -1,8 +1,8 @@
 #!/bin/bash
 
 cd /tmp/
-
 git clone https://github.com/dunst-project/dunst.git
 cd dunst
-make
-sudo make install
+
+make WAYLAND=0
+sudo make install WAYLAND=0

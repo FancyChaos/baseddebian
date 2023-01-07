@@ -1,13 +1,12 @@
 #!/bin/bash
 
-echo "Enter sudo password"
 sudo echo "" || exit 1
 
 # Keep sudo cache up-to-date
 while true
 do
        sudo -v
-       sleep 5
+       sleep 1
 done &
 
 
@@ -107,4 +106,4 @@ sudo $MP -r uvcvideo
 sudo systemctl set-default multi-user.target
 
 # Done
-echo "Installation done"
+sudo reboot now

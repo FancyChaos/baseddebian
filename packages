@@ -85,3 +85,5 @@ exa
 xdotool
 fzf
 unifont
+firefox
+libsdl-pango-dev
