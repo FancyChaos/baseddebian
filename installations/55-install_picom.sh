@@ -9,4 +9,5 @@ cd picom/
 git submodule update --init --recursive
 git checkout v10.2
 meson setup --buildtype=release . build
-sudo ninja -C build
+ninja -C build
+sudo ninja -C build install
