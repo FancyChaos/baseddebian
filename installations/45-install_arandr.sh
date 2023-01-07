@@ -6,7 +6,7 @@ git clone https://github.com/FancyChaos/arandr.git
 cd arandr
 
 # Install docutils for python3
-doas pip install docutils
+sudo pip install docutils
 
 # Install arandr
-doas ./setup.py install
+sudo ./setup.py install

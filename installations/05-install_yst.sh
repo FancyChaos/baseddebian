@@ -7,5 +7,5 @@ git clone https://github.com/FancyChaos/yst.git
 cd yst/
 
 make
-doas make install
+sudo make install
 

@@ -20,4 +20,4 @@ chmod +x install.sh
 ./install.sh -q Hack
 
 # Other fonts/emoji stuff
-doas apt install -y fonts-noto-color-emoji fonts-font-awesome
+sudo apt install -y fonts-noto-color-emoji fonts-font-awesome

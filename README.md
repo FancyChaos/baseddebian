@@ -1,13 +1,13 @@
-# debian-2021
-My own scripts to setting up an dwm environment from a freshly installed Debian Bullseye (11)
+# BasedDebian
+Scripts to setup my personal cutomizations from a freshly installed Debian Bullseye (11)
 
 ## Installation
 
  1. Install a new Debian Bullseye (11) base system
  2. Open your Terminal and install git
-	> doas apt install git
+	> sudo apt install git
  3. Clone this repository and move into it
-	> git clone https://github.com/FancyChaos/debian-2021.git && cd debian-2021
+	> git clone https://github.com/FancyChaos/baseddebian.git && cd baseddebian
  4. Make the run.sh script executable and run it
 	> chmod +x bin/run.sh && bin/run.sh
 

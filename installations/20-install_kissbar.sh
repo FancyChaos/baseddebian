@@ -8,5 +8,5 @@ cd kissbar/
 mv config.mk.linux config.mk
 
 make
-doas make install
+sudo make install
 

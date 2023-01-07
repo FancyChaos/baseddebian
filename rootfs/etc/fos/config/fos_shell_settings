@@ -36,12 +36,11 @@ export WALLPAPER=/etc/fos/wallpapers/vhs_girl.png
 export FZF_DEFAULT_OPTS='--height 60% --layout=reverse --border sharp --color dark'
 
 # Aliases
-alias sudo='doas'
 alias lgrep='grep --color=auto --line-buffered'
 alias grep='grep --color=auto'
 alias m='make'
 alias mc='make clean'
-alias mi='doas make install'
+alias mi='sudo make install'
 alias fb='fbrightness'
 alias allmod="find /lib/modules/$(uname -r) -type f -name '*.ko*'"
 alias b='bat --theme ansi'
