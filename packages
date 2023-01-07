@@ -86,3 +86,4 @@ fzf
 unifont
 firefox
 libsdl-pango-dev
+libpam0g-dev
