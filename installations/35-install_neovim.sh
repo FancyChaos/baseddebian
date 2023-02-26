@@ -22,3 +22,9 @@ mv ~/.cache/nvim ~/.cache/nvim.bak
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
+
+# Set shiftwidth to 4
+cat <<EOF >> ~/.config/nvim/lua/config/options.lua
+local opt = vim.opt
+opt.shiftwidth = 4
+EOF
