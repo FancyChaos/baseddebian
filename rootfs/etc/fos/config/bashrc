@@ -1,0 +1,14 @@
+. /etc/fos/config/shell_settings
+. /etc/fos/config/bash_prompt
+
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
+# Use fzf keybindings
+. /usr/share/doc/fzf/examples/key-bindings.bash
+
+
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+

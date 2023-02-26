@@ -2,7 +2,7 @@
 xrdb -merge ~/.Xresources
 
 # Source custom exports
-. /etc/fos/config/fos_shell_settings
+. /etc/fos/config/shell_settings
 
 # Set java paremeter to fix display issue with intellij
 export _JAVA_AWT_WM_NONREPARENTING=1
