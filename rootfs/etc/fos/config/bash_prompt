@@ -13,7 +13,7 @@ set_prompt_symbol() {
 
 
 set_git_branch() {
-    GIT=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/')
+    GIT=$(__git_ps1)
     [ -n $GIT ] && GIT="${Gre}"${GIT}
 }
 
@@ -32,7 +32,7 @@ __set_prompt() {
     set_git_branch
 
 
-    PS1="\n${BBlu}\w${PYENV}${GIT}\n${SYMBOL} ${RCol}"
+    PS1="\n[${Red}\u ${RCol}at ${BYel}\t${RCol}] in ${BBlu}\w${PYENV}${GIT}\n${SYMBOL} ${RCol}"
 }
 
 PROMPT_COMMAND=__set_prompt
