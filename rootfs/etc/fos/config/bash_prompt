@@ -27,6 +27,9 @@ set_virtualenv() {
 }
 
 __set_prompt() {
+    # Immediately append to history
+    history -a
+
     set_prompt_symbol
     set_virtualenv
     set_git_branch

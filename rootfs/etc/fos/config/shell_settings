@@ -60,6 +60,7 @@ alias fcp='xclip -sel c'
 alias rm='rm -i'
 alias br='brightnessctl'
 alias s='sxiv'
+alias hn='history -n'
 
 # serversync (very custom)
 alias ssync="rsync -zav -e 'ssh -p 1337' --progress"
