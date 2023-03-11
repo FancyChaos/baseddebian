@@ -21,5 +21,5 @@ dunst &
 fwallpaper
 
 # Start kissbar and kisswm
-kissbar -wn &
+kissbar -w &
 dbus-launch --exit-with-session kisswm
