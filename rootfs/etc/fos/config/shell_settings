@@ -5,11 +5,12 @@ export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
 # Paths
+export PATH=$PATH:/sbin:/usr/sbin
 export PATH=$PATH:$HOME/bin:/usr/local/bin
 export PATH=$PATH:/etc/fos/bin
 export PATH=$PATH:/etc/fos/statusbar
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/sbin:/usr/sbin
+export PATH=$PATH:/home/${USER}/.spicetify
 
 # XDG exports
 export XDG_CONFIG_HOME=$HOME/.config
