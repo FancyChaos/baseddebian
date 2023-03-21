@@ -27,15 +27,23 @@ set_virtualenv() {
 }
 
 __set_prompt() {
-    # Immediately append to history
+    # Store last exit code
+    local EXIT=$?
+    if [ "${EXIT}" = "0" ]
+    then
+        EXIT="${Gre}${EXIT}${RCol}"
+    else
+        EXIT="${Red}${EXIT}${RCol}"
+    fi
+
+    # Immediatly append to history
     history -a
 
     set_prompt_symbol
     set_virtualenv
     set_git_branch
 
-
-    PS1="\n[${Red}\u ${RCol}at ${BYel}\t${RCol}] in ${BBlu}\w${PYENV}${GIT}\n${SYMBOL} ${RCol}"
+    PS1="\n[${BYel}\t${RCol} - ${EXIT}] in ${BBlu}\w${PYENV}${GIT}\n${SYMBOL} ${RCol}"
 }
 
 PROMPT_COMMAND=__set_prompt
