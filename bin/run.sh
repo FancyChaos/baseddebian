@@ -3,12 +3,10 @@
 sudo echo "" || exit 1
 
 # Keep sudo cache up-to-date
-while true
-do
-       sudo -v
-       sleep 1
+while true; do
+	sudo -v
+	sleep 1
 done &
-
 
 # Get path of script
 SCRIPTPATH=$(pwd -P)
