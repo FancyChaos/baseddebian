@@ -30,8 +30,9 @@ chsh -s $(which bash)
 mkdir $HOME/.config/ || true
 mkdir $HOME/GitRepos/ || true
 
-# copying /etc/ files
+# copying rootfs
 sudo rsync -avr rootfs/etc/ /etc/
+sudo rsync -avr rootfs/usr/ /usr/
 
 # Update and upgrade here due to copied sources.list
 sudo apt-get update && sudo apt-get upgrade -y
@@ -86,13 +87,11 @@ sudo systemctl disable cups.service
 sudo systemctl disable exim4.service
 sudo systemctl disable bluetooth.service
 sudo systemctl disable blueman-mechanism.service
+sudo systemctl disable packagekit.service packagekit-offline-update.service
 
 # Disable tracker (Data indexing for GNOME mostly)
 systemctl --user mask tracker-store.service tracker-miner-fs.service tracker-miner-rss.service tracker-extract.service tracker-miner-apps.service tracker-writeback.service
 systemctl --user mask gvfs-udisks2-volume-monitor.service gvfs-metadata.service gvfs-daemon.service
-
-sudo systemctl disable unattended-upgrades.service
-sudo systemctl disable packagekit.service packagekit-offline-update.service
 
 # Disable webcam by default
 # Toogle back on with 'sudo modprobe uvcvideo'
@@ -100,8 +99,11 @@ MP=/usr/sbin/modprobe
 which modprobe && MP=$(which modprobe)
 sudo $MP -r uvcvideo
 
-# Boot into command line
-sudo systemctl set-default multi-user.target
+# Boot into graphical target (display manager)
+sudo systemctl set-default graphical.target
+
+# Make sure lightdm is default display manager
+sudo dpkg-reconfigure lightdm
 
 # Done
 sudo reboot now
