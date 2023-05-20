@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=kwm
+Comment=Kisswm
+Exec=startkwm
+Icon=kwm
+Type=Application
+X-GDM-SessionRegisters=true
