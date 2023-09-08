@@ -16,7 +16,7 @@ export BASEPATH
 sudo apt-get update
 
 # Install essentials if they are not yet installed
-sudo apt-get install -y coreutils build-essential rsync wget curl bash fasttrack-archive-keyring
+sudo apt-get install -y coreutils build-essential rsync wget curl bash fasttrack-archive-keyring xdg-utils
 
 cd $BASEPATH
 

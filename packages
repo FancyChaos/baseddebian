@@ -21,11 +21,10 @@ wget
 apt-transport-https
 dirmngr
 rsync
-dmenu
+suckless-tools
 python3
 autoconf
 suckless-tools
-xorg
 software-properties-common
 cmake
 fonts-font-awesome
@@ -46,7 +45,6 @@ nnn
 tig
 htop
 mesa-utils
-mesa-utils-extra
 xsel
 bluez-cups
 blueman
@@ -61,9 +59,8 @@ nmap
 thunderbird
 ack
 neofetch
-crda
 net-tools
-python
+python-is-python3
 xutils-dev
 libx11-xcb-dev
 libxcb-res0-dev
