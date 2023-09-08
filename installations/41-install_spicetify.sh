@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+
+# Annoying to deal with. Jump the ship for now
+exit 0
 
 cd /tmp/
 

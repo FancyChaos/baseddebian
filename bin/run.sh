@@ -9,22 +9,19 @@ while true; do
 done &
 
 # Get path of script
-SCRIPTPATH=$(pwd -P)
-export SCRIPTPATH
+BASEPATH=$(pwd -P)
+export BASEPATH
 
 # Update
 sudo apt-get update
 
 # Install essentials if they are not yet installed
-sudo apt-get install -y coreutils build-essential rsync wget curl bash fasttrack-archive-keyring
+sudo apt-get install -y coreutils build-essential rsync wget curl bash fasttrack-archive-keyring xdg-utils
 
-cd $SCRIPTPATH
+cd $BASEPATH
 
 # Make sure everything is executable
 chmod +x installations/*
-
-# Set defaut shell to bash
-chsh -s $(which bash)
 
 # creating dirs
 mkdir $HOME/.config/ || true
@@ -48,7 +45,7 @@ sudo chmod -R +x /etc/fos/bin/*
 sudo chmod -R +x /etc/fos/statusbar/*
 
 # installing packages and default applications
-sudo apt-get install -y $(cat $SCRIPTPATH/packages)
+sudo apt-get install -y $(cat $BASEPATH/packages)
 
 # Execute install scripts
 for install_script in $(find installations/ -type f | sort); do
@@ -58,9 +55,10 @@ for install_script in $(find installations/ -type f | sort); do
 	./$install_script
 done
 
-cd $SCRIPTPATH
+cd $BASEPATH
 
 # Update tldr database
+mkdir -p /home/felix/.local/share/tldr
 tldr -u
 
 # Git env
@@ -68,7 +66,7 @@ git config --global user.email "Felixs.Developer@tutanota.com"
 git config --global user.name "FancyChaos"
 
 # Generate generic key for later git access
-[ ! -f $HOME/.ssh/git_key ] && ssh-keygen -q -f $HOME/.ssh/git_key -t ecdsa -b 521 -N ""j
+[ ! -f $HOME/.ssh/git_key ] && ssh-keygen -q -f $HOME/.ssh/git_key -t ecdsa -b 521 -N ""
 
 # Fix broken packages for good measure (why not?)
 sudo apt-get install -f -y
@@ -79,12 +77,8 @@ sudo systemctl enable NetworkManager.service
 
 # Cleanup
 sudo apt-get autoremove -y
-sudo apt-get remove python-is-python2 -y || true
-sudo ln -s $(which python3) /usr/local/bin/python
 
-sudo systemctl disable unattended-upgrades.service
 sudo systemctl disable cups.service
-sudo systemctl disable exim4.service
 sudo systemctl disable bluetooth.service
 sudo systemctl disable blueman-mechanism.service
 sudo systemctl disable packagekit.service packagekit-offline-update.service
