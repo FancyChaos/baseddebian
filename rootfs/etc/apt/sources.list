@@ -6,3 +6,6 @@ deb-src http://deb.debian.org/debian-security/ bookworm-security main contrib no
 
 deb http://deb.debian.org/debian bookworm-updates main contrib non-free-firmware
 deb-src http://deb.debian.org/debian bookworm-updates main contrib non-free-firmware
+
+deb https://fasttrack.debian.net/debian-fasttrack/ bookworm-fasttrack main contrib
+deb https://fasttrack.debian.net/debian-fasttrack/ bookworm-backports-staging main contrib

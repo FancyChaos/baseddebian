@@ -9,8 +9,8 @@ while true; do
 done &
 
 # Get path of script
-SCRIPTPATH=$(pwd -P)
-export SCRIPTPATH
+BASEPATH=$(pwd -P)
+export BASEPATH
 
 # Update
 sudo apt-get update
@@ -18,13 +18,14 @@ sudo apt-get update
 # Install essentials if they are not yet installed
 sudo apt-get install -y coreutils build-essential rsync wget curl bash fasttrack-archive-keyring
 
-cd $SCRIPTPATH
+cd $BASEPATH
 
 # Make sure everything is executable
 chmod +x installations/*
 
 # Set defaut shell to bash
-chsh -s $(which bash)
+# TODO: Check default shell on base debian (first snapshot)
+#sudo chsh -s $(which bash)
 
 # creating dirs
 mkdir $HOME/.config/ || true
@@ -48,7 +49,7 @@ sudo chmod -R +x /etc/fos/bin/*
 sudo chmod -R +x /etc/fos/statusbar/*
 
 # installing packages and default applications
-sudo apt-get install -y $(cat $SCRIPTPATH/packages)
+sudo apt-get install -y $(cat $BASEPATH/packages)
 
 # Execute install scripts
 for install_script in $(find installations/ -type f | sort); do
@@ -58,7 +59,7 @@ for install_script in $(find installations/ -type f | sort); do
 	./$install_script
 done
 
-cd $SCRIPTPATH
+cd $BASEPATH
 
 # Update tldr database
 tldr -u
