@@ -2,4 +2,4 @@
 
 # Status bar module for disk space
 
-printf "%s %s\n" "" "$(df -h / | awk ' /[0-9]/ {print $3 "/" $2}')"
+printf "%s %s\n" "" "$(df -h / | awk ' /[0-9]/ {print $3 "/" $2}')"

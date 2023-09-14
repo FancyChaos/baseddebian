@@ -1,41 +1,38 @@
 #!/bin/bash
 
-# Prints all batteries, their percentage remaining and an emoji corresponding
-# to charge status (🔌 for plugged up, 🔋 for discharging on battery, etc.).
+# Print battery status to stdout
+# Warn user if battery falls below 10% with notify-send
+
+UNKNOWN=""
+CHARGING="󰚥"
+DISCHARGING="󰚦"
 
 # Loop through all attached batteries and format the info
 for battery in /sys/class/power_supply/BAT?*; do
 	# If non-first battery, print a space separator.
-	[ -n "${capacity+x}" ] && printf " "
+	[ -n "${capacity}" ] && printf " "
 
         # Get capacity
         capacity="$(cat "$battery/capacity" 2>&1)"
 
         # Sets up the status and capacity
-	case "$(cat "$battery/status" 2>&1)" in
-		"Unknown") status="" ;;
-		"Charging") status="ﮣ" ;;
-                "Discharging") status="ﮤ" ;;
-	esac
+        case "$(cat "$battery/status" 2>&1)" in
+                "Unknown") status="$UNKNOWN" ;;
+                "Charging") status="$CHARGING" ;;
+                "Discharging") status="$DISCHARGING" ;;
+        esac
 
         # Warn constantly when under 10%
         lockfile="/tmp/sb-battery-low"
-        if [[ "$status" != "ﮣ" ]] && [[ "$capacity" -le 10 ]] && [[ ! -f "$lockfile" ]]
+        if [[ "$status" != "$CHARGING" ]] && [[ "$capacity" -le 10 ]] && [[ ! -f "$lockfile" ]]
         then
             touch $lockfile
-            notify-send -u critical -t 8000 -h int:value:"$capacity" -h string:hlcolor:"#F5292E" "I'am low on health!"
+            notify-send -a "PC" -u critical -t 8000 \
+                    -h int:value:"$capacity" \
+                    -h string:hlcolor:"#F5292E" "I'am low on health!"
             sleep 60 && rm $lockfile &
         fi
 
-
-	# Will make a warn variable if discharging and low
-	warn=""
-	[ "$status" = "ﮤ" ] && [ "$capacity" -le 25 ] && warn=""
-
-        # Default battery symbol if status is not unknown
-        default=""
-        [[ "$status" != "" ]] && [[ -z "$warn" ]] && default=""
-
 	# Prints the info
-	printf "%s%s%s %d%%" "$default" "$warn" "$status" "$capacity";
+	printf "󰁹%s %d%%" "$status" "$capacity";
 done && printf "\\n"
