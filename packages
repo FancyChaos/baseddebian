@@ -89,3 +89,5 @@ flameshot
 mupdf
 lightdm
 libpcre3-dev
+libnotify-bin
+arandr
