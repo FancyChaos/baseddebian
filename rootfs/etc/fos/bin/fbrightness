@@ -1,28 +1,37 @@
 #!/bin/bash
 # Control the brightness by calling this script.
-# Number are used as the first decimal place.
-# > fbrightness +1 -> increase for 0.1
-# > fbrightness -1 -> decrease for 0.1
+# > fbrightness +1 -> increase for 1%
+# > fbrightness -1 -> decrease for -1%
+
+error () {
+	echo "Error: $1" >&2
+	exit $2
+}
+
+B=$(which brightnessctl)
+
+[ -z "$1" ] && error "No value given" 1
+
+# brightnessctl required
+[ -z "$B" ] && error "brightnessctl is required" 2
 
 # Get current brightness
-current=$(xrandr --verbose | grep -m 1 -i brightness | cut -f2 -d ' ')
+current=$($B -m | awk -F, '{print $4}' | tr -d %)
 
 # Get operation (- or +) and the amount to decrease/increase
 operator=${1:0:1}
 amount=${1:1:1}
 
 # Calculate new brightness value
-new=$(echo ${current}${operator}0.${amount} | bc)
+new=$(echo ${current}${operator}${amount} | bc)
 
-# Brightness can't be lower than 0.2 or higher than 1
-(( $(echo "$new < 0.2" | bc -l) )) && exit
-(( $(echo "$new > 1" | bc -l) )) && exit
+# Brightness can't be lower than 5 or higher than 100
+[ $new -lt 5 ] && new="5"
+[ $new -gt 100 ] && new="100"
 
 # Send brightness status
-notify-send -t 2000 -h int:value:$(echo "$new*100" | bc) "Brightness"
+notify-send -a "PC" -t 2000 \
+	-h int:value:$new "Brightness"
 
 # Set brightness
-for con in $(xrandr | grep " connected" | cut -f1 -d " ")
-do
-	xrandr --output $con --brightness $new &> /dev/null
-done
+$B s $new%
